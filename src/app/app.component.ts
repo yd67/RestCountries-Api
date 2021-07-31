@@ -13,6 +13,7 @@ export class AppComponent {
    dmText = 'hsl(0, 0%, 100%)';
    dmBlock ='hsl(209, 23%, 22%)';
    
+   
     //  lighMode css 
    lmBg = 'hsl(0, 0%, 98%)' ;
    lmText = 'hsl(200, 15%, 8%)';
