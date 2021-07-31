@@ -1,0 +1,42 @@
+<section class="mb-6 mt-6">
+    <div class="search-container">
+        <div class="input-box">
+              <div class="div"><span class="search"><i class="fas fa-search"></i></span></div>  
+              <div><input class="perso" #s (keypress)="inputFilter(s.value)" type="text" placeholder="seach for a country"></div>
+        </div>
+        <div class="filter-box">
+            <select  #f (change)="filter(f.value)" class="filter">
+                  <option value="noError" >filter by region </option>
+                  <option Value='europe'>Europe</option>
+                  <option Value="americas">Americas</option>
+                  <option Value="africa">Africa</option>
+                  <option Value="asia">Asia</option>
+                  <option Value="oceania">Oceania</option>
+              </select>
+          </div>
+    </div>
+</section>
+<section >
+    <div class="container-pays">
+        <div class="pays-card" *ngFor='let p of pays | paginate: { itemsPerPage: 8, currentPage: p }'>
+          <a routerLink="/pays-details/{{p.alpha3Code}}">   <div class="block-pays">
+
+              <div class="drapeau-block"> 
+                    <img class="drapeau" src="{{ p.flag }} " alt=""> 
+              </div>
+              <div class="pays-info">
+                     <div class="nom-pays"> <h2 > {{p.name}}</h2> </div>
+                     <div class="info-details">
+                         <div> <span class="info">Poupaltion</span>: {{p.population}} </div>
+                         <div> <span class="info">region</span>: {{p.region}} </div>
+                         <div> <span class="info">Capital</span>:  {{p.capital}} </div>  
+                     </div>
+               </div>
+              </div>
+          </a>
+        </div>
+    </div>
+</section> 
+    <div class=" section pagination">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+     </div>

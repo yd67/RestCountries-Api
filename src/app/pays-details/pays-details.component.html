@@ -1,0 +1,29 @@
+<section>
+    <div class="back"> <button class="button box back" (click)="goBack()"><i class="fas fa-long-arrow-alt-left"></i> Back</button> </div>
+    <div class="section-details"> 
+        <div class="img">
+            <img src="{{paysDetails.flag}}" alt="">
+        </div>
+
+        <div class="details">
+                <div> <h2>{{ paysDetails.name }}</h2> </div>
+                <div class="sub-details">
+                    <div> 
+                        <div><span class="details-info">Native Name</span>: {{ paysDetails.nativeName}} </div>
+                        <div><span class="details-info">Populaion</span>: {{ paysDetails.population }}</div>
+                        <div><span class="details-info">Region</span>: {{ paysDetails.region }}</div>
+                        <div><span class="details-info">Sub Region</span>: {{ paysDetails.subregion }} </div>
+                        <div><span class="details-info">Capital</span>: {{ paysDetails.capital }} </div>  
+                    </div>
+                    <div>
+                        <div><span class="details-info">Top Level Domain</span>: {{ paysDetails.topLevelDomain[0] }}  </div>
+                        <div><span class="details-info">Currencies</span>: {{ paysDetails.currencies[0].name }} </div>
+                        <div><span class="details-info">Languages</span>: {{ paysDetails.languages[0].name }} </div>   
+                    </div>
+                </div>
+                <div>
+                    <p> <span class="details-info">Border Countries</span>: <span *ngFor="let b of border" > <span class="pays-voisin" (click)="voisin(b)" >{{ b }}</span> </span></p> 
+                </div>
+         </div>
+    </div>
+</section>

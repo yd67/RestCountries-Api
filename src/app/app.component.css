@@ -1,0 +1,14 @@
+.tete{
+    background-color: var(--block);
+    color: var(--text);
+}
+.ma-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+h1{
+    font-weight: bold;
+    font-size: 20px;
+}
